@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reve BAR 메뉴판</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(30, 30, 30, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header h2 {
+            font-size: 40px;
+            color: #ffffff;
+            margin: 0;
+            position: relative;
+            display: inline-block;
+            z-index: 0;
+        }
+
+        .header h2::before,
+        .header h2::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: #ffffff;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            filter: blur(2px);
+        }
+
+        .header h2::after {
+            transform: translate(-50%, -50%) rotate(-10deg);
+        }
+
+        .menu-section {
+            margin-bottom: 30px;
+            position: relative;
+            padding: 25px;
+            background-color: rgba(50, 50, 50, 0.9);
+            border-radius: 10px;
+        }
+
+        .menu-section::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #666666;
+            margin: 25px 0;
+        }
+
+        .menu-section h2 {
+            font-size: 28px;
+            color: #ffffff;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .menu-section ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .menu-section ul li {
+            font-size: 18px;
+            color: #d0d0d0;
+            padding: 10px 0;
+            border-bottom: 1px solid #444444;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu-section ul li span {
+            font-size: 18px;
+            color: #d0d0d0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 16px;
+            color: #b0b0b0;
+        }
+
+        .combined-menu {
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+            background-color: rgba(50, 50, 50, 0.9);
+        }
+
+        .combined-menu .section {
+            margin-bottom: 20px;
+        }
+
+        .combined-menu .section h2 {
+            font-size: 28px;
+            color: #ffffff;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 12px;
+            margin-bottom: 10px;
+        }
+
+        .combined-menu .section ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .combined-menu .section ul li {
+            font-size: 18px;
+            color: #d0d0d0;
+            padding: 10px 0;
+            border-bottom: 1px solid #444444;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .combined-menu .section ul li span {
+            font-size: 18px;
+            color: #d0d0d0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container visible">
+        <div class="header">
+            <h2>Reve Menu</h2>
+        </div>
+
+        <div class="menu-section">
+            <h2>Beer Set</h2>
+            <ul>
+                <li><span>A Set 국산 맥주 세트 5개 묶음 + 황도 or 마른 안주</span><span>85,000</span></li>
+                <li><span>B Set 수입 맥주 세트 5개 묶음 + 황도 or 마른 안주 (Guinness, Blanc 제외)</span><span>105,000</span></li>
+                <li><span>Premium Set 수입 맥주 세트 5개 묶음 + 황도 or 마른 안주</span><span>125,000</span></li>
+            </ul>
+        </div>
+
+        <div class="menu-section">
+            <h2>Beer</h2>
+            <ul>
+                <li><span>국산맥주</span><span>12,000</span></li>
+                <li><span>수입맥주</span><span>16,000</span></li>
+                <li><span>기네스, 블랑</span><span>20,000</span></li>
+            </ul>
+        </div>
+
+        <div class="combined-menu">
+            <div class="section">
+                <h2>Scotch Whisky</h2>
+                <ul>
+                    <li><span>골든블루 사피루스</span><span>230,000</span></li>
+                    <li><span>골든블루 다이아</span><span>280,000</span></li>
+                    <li><span>윈저 ice</span><span>230,000</span></li>
+                    <li><span>윈저 w17</span><span>270,000</span></li>
+                    <li><span>임페리얼35바이</span><span>230,000</span></li>
+                    <li><span>발렌타인 12년산</span><span>300,000</span></li>
+                    <li><span>발렌타인 17년산</span><span>460,000</span></li>
+                    <li><span>발렌타인 21년산</span><span>650,000</span></li>
+                    <li><span>발렌타인 30년산</span><span>1,800,000</span></li>
+                    <li><span>발렌타인 마스터즈</span><span>280,000</span></li>
+                    <li><span>조니워커 블랙 L</span><span>300,000</span></li>
+                    <li><span>조니워커 블랙 M</span><span>240,000</span></li>
+                    <li><span>조니워커 블루라벨</span><span>900,000</span></li>
+                    <li><span>더 발베니</span><span>400,000</span></li>
+                    <li><span>로얄 살루트 21년산</span><span>800,000</span></li>
+                    <li><span>글렌피딕 12년산</span><span>300,000</span></li>
+                    <li><span>글렌피딕 15년산</span><span>430,000</span></li>
+                    <li><span>글렌피딕 18년산</span><span>650,000</span></li>
+                    <li><span>헤네시 V.S.O.P</span><span>350,000</span></li>
+                    <li><span>잭 다니엘</span><span>280,000</span></li>
+                    <li><span>잭 다니엘 허니</span><span>280,000</span></li>
+                    <li><span>호세 쿠엘보</span><span>300,000</span></li>
+                    <li><span>앱솔루트 피치</span><span>280,000</span></li>
+                    <li><span>앱솔루트 플레이버</span><span>280,000</span></li>
+                    <li><span>스미노프 그린애플</span><span>280,000</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2>Highball</h2>
+            <ul>
+                <li><span>우메 하이볼</span><span>20,000</span></li>
+                <li><span>잭허니 하이볼</span><span>20,000</span></li>
+                <li><span>얼그레이 하이볼</span><span>22,000</span></li>
+                <li><span>피치트리 하이볼</span><span>22,000</span></li>
+                <li><span>봄베이 하이볼</span><span>22,000</span></li>
+            </ul>
+        </div>
+
+        <div class="menu-section">
+            <h2>Cocktail</h2>
+            <ul>
+                <li><span>말리부 오렌지</span><span>20,000</span></li>
+                <li><span>잭콕</span><span>20,000</span></li>
+                <li><span>진토닉</span><span>20,000</span></li>
+                <li><span>보드카토닉</span><span>20,000</span></li>
+                <li><span>데킬라 선라이즈</span><span>22,000</span></li>
+                <li><span>모히또</span><span>22,000</span></li>
+                <li><span>마가리타</span><span>23,000</span></li>
+                <li><span>마티니</span><span>23,000</span></li>
+                <li><span>블루사파이어</span><span>23,000</span></li>
+                <li><span>Kiss of Fire</span><span>30,000</span></li>
+            </ul>
+        </div>
+
+        <div class="combined-menu">
+            <div class="section">
+                <h2>Main Menu</h2>
+                <ul>
+                    <li><span>참치살 크래커</span><span>50,000</span></li>
+                    <li><span>과일</span><span>35,000</span></li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>Side Menu</h2>
+                <ul>
+                    <li><span>작은 컵라면</span><span>5,000</span></li>
+                    <li><span>큰 컵라면</span><span>7,000</span></li>
+                    <li><span>황도</span><span>15,000</span></li>
+                    <li><span>마른 안주</span><span>15,000</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <h2>Drink</h2>
+            <ul>
+                <li><span>콜라 500ml</span><span>5,000</span></li>
+                <li><span>사이다 500ml</span><span>5,000</span></li>
+                <li><span>토닉워터</span><span>3,000</span></li>
+            </ul>
+        </div>
+    <div class="footer">
+        <p>© 2024 Reve Bar. All Rights Reserved.</p>
+    </div>
+</body>
+</html>
