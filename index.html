@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+`<!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,31 +40,12 @@
             position: relative;
         }
 
-        .header h2 {
-            font-size: 40px;
-            color: #ffffff;
-            margin: 0;
-            position: relative;
-            display: inline-block;
-            z-index: 0;
-        }
-
-        .header h2::before,
-        .header h2::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
+        .header img {
             width: 100%;
-            height: 2px;
-            background: #ffffff;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            filter: blur(2px);
-        }
-
-        .header h2::after {
-            transform: translate(-50%, -50%) rotate(-10deg);
+            max-width: 300px;
+            border: 4px solid rgba(80, 80, 80, 0.8);
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
 
         .menu-section {
@@ -104,11 +86,6 @@
             border-bottom: 1px solid #444444;
             display: flex;
             justify-content: space-between;
-        }
-
-        .menu-section ul li span {
-            font-size: 18px;
-            color: #d0d0d0;
         }
 
         .footer {
@@ -152,33 +129,67 @@
             justify-content: space-between;
         }
 
-        .combined-menu .section ul li span {
-            font-size: 18px;
-            color: #d0d0d0;
+        .separator {
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0));
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .premium-note {
+            font-size: 18.5px;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .header img {
+            width: auto;
+            /* 자동 크기 조정 */
+            height: 230px;
+            /* 고정 높이 */
+            max-width: 100%;
+            /* 최대 너비를 100%로 설정 */
+            border: 4px solid rgba(80, 80, 80, 0.8);
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
+
 <body>
     <div class="container visible">
         <div class="header">
-            <h2>Reve Menu</h2>
+            <img src="reve.jpg" alt="Reve Logo">
         </div>
 
         <div class="menu-section">
             <h2>Beer Set</h2>
             <ul>
-                <li><span>A Set 국산 맥주 세트 5개 묶음 + 황도 or 마른 안주</span><span>85,000</span></li>
-                <li><span>B Set 수입 맥주 세트 5개 묶음 + 황도 or 마른 안주 (Guinness, Blanc 제외)</span><span>105,000</span></li>
-                <li><span>Premium Set 수입 맥주 세트 5개 묶음 + 황도 or 마른 안주</span><span>125,000</span></li>
+                <li><span>A Set 국산 맥주 세트 5개 묶음</span><span>85,000</span></li>
+                <li><span>B Set 수입 맥주 세트 5개 묶음 (Guinness, Blanc 제외)</span><span>100,000</span></li>
+                <li><span>Premium Set 수입 맥주 세트 5개 묶음</span><span>120,000</span></li>
             </ul>
+            <div class="separator"></div>
+            <p class="premium-note">with 마른 안주 or 황도 or 참치살크래커</p>
         </div>
 
         <div class="menu-section">
             <h2>Beer</h2>
             <ul>
-                <li><span>국산맥주</span><span>12,000</span></li>
-                <li><span>수입맥주</span><span>16,000</span></li>
-                <li><span>기네스, 블랑</span><span>20,000</span></li>
+                <li><span>카스</span><span>12,000</span></li>
+                <li><span>테라</span><span>12,000</span></li>
+                <li><span>버드와이저</span><span>12,000</span></li>
+                <li><span>카프리</span><span>13,000</span></li>
+                <li><span>클라우드</span><span>12,000</span></li>
+                <li><span>호가든</span><span>16,000</span></li>
+                <li><span>하이네켄</span><span>16,000</span></li>
+                <li><span>밀러</span><span>16,000</span></li>
+                <li><span>아사히</span><span>16,000</span></li>
+                <li><span>코로나</span><span>16,000</span></li>
+                <li><span>Blanc</span><span>20,000</span></li>
+                <li><span>Guinness</span><span>20,000</span></li>
             </ul>
         </div>
 
@@ -204,8 +215,7 @@
                     <li><span>글렌피딕 12년산</span><span>300,000</span></li>
                     <li><span>글렌피딕 15년산</span><span>430,000</span></li>
                     <li><span>글렌피딕 18년산</span><span>650,000</span></li>
-                    <li><span>헤네시 V.S.O.P</span><span>350,000</span></li>
-                    <li><span>잭 다니엘</span><span>280,000</span></li>
+                    <li><span>헤네시 V.S.O.P</span><span>360,000</span></li>
                     <li><span>잭 다니엘 허니</span><span>280,000</span></li>
                     <li><span>호세 쿠엘보</span><span>300,000</span></li>
                     <li><span>앱솔루트 피치</span><span>280,000</span></li>
@@ -214,11 +224,14 @@
                 </ul>
             </div>
         </div>
+
         <div class="menu-section">
             <h2>Highball</h2>
             <ul>
                 <li><span>우메 하이볼</span><span>20,000</span></li>
                 <li><span>잭허니 하이볼</span><span>20,000</span></li>
+                <li><span>레몬 하이볼</span><span>20,000</span></li>
+                <li><span>라임 하이볼</span><span>20,000</span></li>
                 <li><span>얼그레이 하이볼</span><span>22,000</span></li>
                 <li><span>피치트리 하이볼</span><span>22,000</span></li>
                 <li><span>봄베이 하이볼</span><span>22,000</span></li>
@@ -247,6 +260,7 @@
                 <ul>
                     <li><span>참치살 크래커</span><span>50,000</span></li>
                     <li><span>과일</span><span>35,000</span></li>
+                    <li><span>육포</span><span>35,000</span></li>
                 </ul>
             </div>
             <div class="section">
@@ -254,12 +268,12 @@
                 <ul>
                     <li><span>작은 컵라면</span><span>5,000</span></li>
                     <li><span>큰 컵라면</span><span>7,000</span></li>
-                    <li><span>황도</span><span>15,000</span></li>
-                    <li><span>마른 안주</span><span>15,000</span></li>
+                    <li><span>황도</span><span>20,000</span></li>
+                    <li><span>마른 안주</span><span>20,000</span></li>
                 </ul>
             </div>
         </div>
-        
+
         <div class="menu-section">
             <h2>Drink</h2>
             <ul>
@@ -268,8 +282,10 @@
                 <li><span>토닉워터</span><span>3,000</span></li>
             </ul>
         </div>
-    <div class="footer">
-        <p>© 2024 Reve Bar. All Rights Reserved.</p>
+        <div class="footer">
+            <p>© 2024 Reve Bar. All Rights Reserved.</p>
+        </div>
     </div>
 </body>
+
 </html>
